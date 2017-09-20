@@ -1,0 +1,140 @@
+<!DOCTYPE HTML>
+<html xmlns="http://www.w3.org/1999/xhtml" xml:lang="en" lang="en">
+
+<head>
+	<title>Our Love Story</title>
+	<meta http-equiv="content-type" content="text/html; charset=UTF-8">
+	<style type="text/css">
+		@font-face {
+			font-family: digit;
+			src: url('./fonts/digital-7_mono.ttf') format("truetype");
+		}
+	</style>
+	<link href="css/default.css" type="text/css" rel="stylesheet">
+	<script type="text/javascript" src="js/jquery.js"></script>
+	<script type="text/javascript" src="js/garden.js"></script>
+	<script type="text/javascript" src="js/functions.js"></script>
+</head>
+
+<body>
+	<div id="mainDiv">
+		<div id="content">
+
+			<div id="knownMessages">
+				We have known each other for <br>
+				<div id="knowElapseClock"></div>
+				<div id="ourStory" style="padding-top:20px;">
+					&nbsp;&nbsp;
+					<!-- <button>&nbsp;&nbsp; -->
+						<img src="images/heart.png" style="height:22px" >
+						<a class="story"  href="view/index2013.html">
+							our story
+						</a>
+					<!-- </button> -->
+				</div>
+
+
+			</div>
+
+			<div id="code">
+				<span class="comments">//Sep 22,1992,you were born in Yunnan.</span><br /> Boy i = <span class="keyword">new</span> Boy(
+				<span class="string">"Mr. Yuan"</span>);<br/>
+				<span class="comments">//Jan 16,1992,I was born in Liaoning.</span><br /> Girl u = <span class="keyword">new</span> Girl(
+				<span class="string">"Miss Ma"</span>);<br />
+				<span class="comments">//In 2011 we were admitted to the same college.</span><br /> i.join(
+				<span class="string">"UESTC"</span>);<br /> u.join(
+				<span class="string">"UESTC"</span>);<br />
+				<span class="comments">// Sep 30, 2013, we met each other in the radio class. </span><br /> i.met(u);
+				<br />
+				<span class="comments">// since then,we often ate,ran,studied together. </span><br /> i.doSthWith(u);
+				<br />
+				<span class="comments">// Nov 02, 2013, you hugged and kissed me that night. </span><br /> u.hugAndKiss(i);
+				<br />
+				<span class="comments">/**</span><br />
+				<span class="space" /><span class="comments">* You did not have a formal statement with me.</span><br />
+				<span class="space" /><span class="comments">* But I became your girlfriend ever since.</span><br />
+				<span class="space" /><span class="comments">*/</span><br /> i.beTogetherWith(u);
+				<br />
+				<span class="comments">// You love me and take care of me.</span><br /> u.takeCareOf(i);
+				<br />
+				<span class="comments">// 2015 ,we graduated and I left for Shanghai to work.</span><br /> i.leaveForShanghai();
+				<br />
+				<span class="comments">//And you stay in Chengdu for studing.</span><br /> u.stayInChengdu();
+				<br />
+				<span class="comments">// Since then, we can't see each other every day.</span><br /> i.miss(u);
+				<br />
+				<span class="comments">// I keep waiting for your graduation.</span><br />
+				<span class="keyword">boolean</span> isGraduate = <span class="keyword">true</span>;<br />
+				<span class="keyword">while</span> (!isGraduate) {<br />
+				<span class="placeholder" />i.waitFor(u);<br /> }
+				<br/> ...
+				<br />
+				<br />
+
+			</div>
+
+			<div id="loveHeart">
+				<canvas id="garden"></canvas>
+				<div id="words">
+					<div id="messages">
+						Mr. Yuan,I have fallen in love with you for
+						<div id="elapseClock"></div>
+					</div>
+					<div id="loveu">
+						Love u forever and ever.<br/>
+						<div class="signature">- Miss Ma</div>
+					</div>
+				</div>
+			</div>
+		</div>
+		<div id="copyright">
+			Copyright © 2017 By Miss Ma
+		</div>
+	</div>
+	<script type="text/javascript">
+		var offsetX = $("#loveHeart").width() / 2;
+		var offsetY = $("#loveHeart").height() / 2 - 55;
+		var together = new Date();
+		together.setFullYear(2013, 11, 02);
+		together.setHours(20);
+		together.setMinutes(0);
+		together.setSeconds(0);
+		together.setMilliseconds(0);
+
+		var known = new Date();
+		known.setFullYear(2013, 09, 30);
+		known.setHours(19);
+		known.setMinutes(0);
+		known.setSeconds(0);
+		known.setMilliseconds(0);
+
+		if (!document.createElement('canvas').getContext) {
+			var msg = document.createElement("div");
+			msg.id = "errorMsg";
+			msg.innerHTML = "Your browser doesn't support HTML5!<br/>Recommend use Chrome 14+/IE 9+/Firefox 7+/Safari 4+";
+			document.body.appendChild(msg);
+			$("#code").css("display", "none")
+			$("#copyright").css("position", "absolute");
+			$("#copyright").css("bottom", "10px");
+			document.execCommand("stop");
+		} else {
+			setTimeout(function () {
+				startHeartAnimation();
+			}, 1000);
+
+			// timeElapse(together);
+			setInterval(function () {
+				timeElapse(together);
+			}, 500);
+
+			setInterval(function () {
+				timeElapseKnowm(known);
+			}, 500);
+
+			adjustCodePosition();
+			$("#code").typewriter();
+		}
+	</script>
+</body>
+
+</html>
